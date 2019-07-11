@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Weather App</string>
+    <string name="time_in">Time in</string>
+    <string name="_20_45">20:45</string>
+    <string name="los_angeles">Los Angeles</string>
+    <string name="moscow">Moscow</string>
+    <string name="saint_petersburg">Saint Petersburg</string>
+    <string name="washington">Washington, D.C.</string>
+    <string name="munich">Munich</string>
+    <string name="vienna">Vienna</string>
+    <string name="storm">Storm</string>
+    <string name="pressure">760 mm Hg</string>
+</resources>
