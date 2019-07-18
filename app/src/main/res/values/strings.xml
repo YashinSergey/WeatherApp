@@ -9,5 +9,9 @@
     <string name="munich">Munich</string>
     <string name="vienna">Vienna</string>
     <string name="storm">Storm</string>
-    <string name="pressure">760 mm Hg</string>
+    <string name="pressure">760 </string>
+    <string name="plus">+</string>
+    <string name="_23">23</string>
+    <string name="C">C°</string>
+    <string name="mm_hg">mm Hg</string>
 </resources>

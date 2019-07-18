@@ -1,55 +1,51 @@
 package com.example.weatherapp;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView cityName;
-    TextView cityNameForTime;
+    public static TextView temperatureMA;
+    public static TextView atmosphericPhenomenaMA;
+    public static TextView pressureMA;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        temperatureMA = findViewById(R.id.temperature);
+        atmosphericPhenomenaMA = findViewById(R.id.atmospheric_phenomena);
+        pressureMA = findViewById(R.id.pressure);
     }
 
     public void onClickCitySelectionButton(View view) {
-        setContentView(R.layout.city_selection);
+        Intent intent = new Intent(getApplicationContext(), CitySelection.class);
+        WeatherCondition condition = new WeatherCondition();
+        condition.temperature = temperatureMA.getText().toString();
+        condition.atmosphericPhenomena = atmosphericPhenomenaMA.getText().toString();
+        condition.pressure = pressureMA.getText().toString();
+        intent.putExtra("WEATHER_CONDITION", condition);
+        startActivityForResult(intent, 2);
     }
 
-    public void onClickMoscowRB(View view){
-        citySelect(R.string.moscow);
-    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if (requestCode != 2) {
+            super.onActivityResult(requestCode,resultCode,data);
+            return;
+        }
+        if (resultCode == RESULT_OK) {
+            assert data != null;
+            temperatureMA.setText(data.getStringExtra("WEATHER_CONDITION_2"));
+            atmosphericPhenomenaMA.setText(data.getStringExtra("WEATHER_CONDITION_2"));
+            pressureMA.setText(data.getStringExtra("WEATHER_CONDITION_2"));
 
-    public void onClickSaintPetersburgRB(View view){
-        citySelect(R.string.saint_petersburg);
-    }
-
-    public void onClickWashingtonRB(View view){
-        citySelect(R.string.washington);
-    }
-
-    public void onClickMunichRB(View view){
-        citySelect(R.string.munich);
-    }
-
-    public void onClickLosAngelesRB(View view){
-        citySelect(R.string.los_angeles);
-    }
-
-    public void onClickViennaRB(View view){
-        citySelect(R.string.vienna);
-    }
-
-    private void citySelect(int p) {
-        setContentView(R.layout.activity_main);
-        cityName = findViewById(R.id.city_name);
-        cityNameForTime = findViewById(R.id.city_name_for_time);
-        cityName.setText(p);
-        cityNameForTime.setText(cityName.getText());
+        }
     }
 }
