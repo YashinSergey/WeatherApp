@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/storm"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/city_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:fontFamily="sans-serif-medium"
+        android:onClick="onClickCitySelectionButton"
+        android:text="@string/moscow"
+        android:textSize="24sp"
+        android:textStyle="italic"
+        android:textColor="@android:color/primary_text_dark"
+        android:alpha="0.5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/temperature"
+        android:layout_width="216dp"
+        android:layout_height="84dp"
+        android:layout_marginTop="144dp"
+        android:text="@string/plus_20"
+        android:textSize="70sp"
+        android:textColor="@android:color/primary_text_dark"
+        android:alpha="0.5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/city_name"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/time_in"
+        android:layout_width="72dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/time_in"
+        android:textColor="@android:color/primary_text_dark"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+
+    <TextView
+        android:id="@+id/city_name_for_time"
+        android:layout_width="0dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/moscow"
+        android:textColor="@android:color/primary_text_dark"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/time_in"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="95dp"
+        android:layout_height="42dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/_20_45"
+        android:textColor="@android:color/primary_text_dark"
+        android:textSize="35sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/atmospheric_phenomena"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/storm"
+        android:textColor="@android:color/primary_text_dark"
+        android:alpha="0.5"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.28"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/temperature" />
+
+    <TextView
+        android:id="@+id/pressure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="26dp"
+        android:text="@string/pressure"
+        android:textColor="@android:color/primary_text_dark"
+        android:alpha="0.5"
+        android:textSize="15sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/atmospheric_phenomena"
+        app:layout_constraintStart_toEndOf="@+id/atmospheric_phenomena"
+        app:layout_constraintTop_toBottomOf="@+id/temperature" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
