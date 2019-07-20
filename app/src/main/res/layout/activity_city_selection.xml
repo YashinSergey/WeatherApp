@@ -95,7 +95,6 @@
                 android:textColor="@android:color/primary_text_dark"
                 android:layout_margin="1dp"
                 tools:ignore="ButtonStyle" />
-
         </TableRow>
     </TableLayout>
 </ScrollView>

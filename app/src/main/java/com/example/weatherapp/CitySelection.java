@@ -6,17 +6,10 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
 
 public class CitySelection extends AppCompatActivity {
 
-    private TextView cityName;
-    private TextView cityNameForTime;
-    private TextView temperatureCS;
-    private TextView atmosphericPhenomenaCS;
-    private TextView pressureCS;
-    private WeatherCondition condition;
-    private String wc = "WEATHER_CONDITION_2";
+    private TransmissionData tData;
 
 
     @SuppressLint("SetTextI18n")
@@ -25,56 +18,46 @@ public class CitySelection extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_city_selection);
 
-        temperatureCS = findViewById(R.id.temperature);
-        atmosphericPhenomenaCS = findViewById(R.id.atmospheric_phenomena);
-        pressureCS = findViewById(R.id.pressure);
-
-        condition = (WeatherCondition) getIntent().getExtras().getSerializable("WEATHER_CONDITION");
-
-        assert condition != null;
-        temperatureCS.setText(condition.temperature);
-        atmosphericPhenomenaCS.setText(condition.atmosphericPhenomena);
-        pressureCS.setText(condition.pressure);
-
+        tData = new TransmissionData();
     }
 
     @SuppressLint("SetTextI18n")
     public void onClickMoscowRB(View view){
-        temperatureCS.setText("19");
-        atmosphericPhenomenaCS.setText("BLA-BLA");
-        pressureCS.setText("762");
-
-        Intent intentRes = new Intent();
-        intentRes.putExtra(wc, condition);
-        setResult(RESULT_OK, intentRes);
-        finish();
+        citySelect(R.string.moscow, "19", R.string.weather_thunder, "762");
     }
 
     public void onClickSaintPetersburgRB(View view){
-        citySelect(R.string.saint_petersburg);
+        citySelect(R.string.saint_petersburg, "18", R.string.weather_rainy, "756");
     }
 
     public void onClickWashingtonRB(View view){
-        citySelect(R.string.washington);
+        citySelect(R.string.washington, "21", R.string.weather_sunny, "760");
     }
 
     public void onClickMunichRB(View view){
-        citySelect(R.string.munich);
+        citySelect(R.string.munich, "19", R.string.weather_cloudy, "755");
     }
 
     public void onClickLosAngelesRB(View view){
-        citySelect(R.string.los_angeles);
+        citySelect(R.string.los_angeles, "27", R.string.weather_sunny, "759");
     }
 
     public void onClickViennaRB(View view){
-        citySelect(R.string.vienna);
+        citySelect(R.string.vienna, "25", R.string.weather_clear, "760");
     }
 
-    private void citySelect(int p) {
-        setContentView(R.layout.activity_main);
-        cityName = findViewById(R.id.city_name);
-        cityNameForTime = findViewById(R.id.city_name_for_time);
-        cityName.setText(p);
-        cityNameForTime.setText(cityName.getText());
+    private void citySelect(int p, String temp, int atmPh, String press) {
+        tData.cityName = p;
+        tData.temperature = temp;
+        tData.atmosphericPhenomena = atmPh;
+        tData.pressure = press;
+
+        Intent intentRes = new Intent();
+        intentRes.putExtra("CITY_NAME", tData.cityName);
+        intentRes.putExtra("TEMPERATURE", tData.temperature);
+        intentRes.putExtra("ATMOSPHERIC_PHENOMENA", tData.atmosphericPhenomena);
+        intentRes.putExtra("PRESSURE", tData.pressure);
+        setResult(RESULT_OK, intentRes);
+        finish();
     }
 }
