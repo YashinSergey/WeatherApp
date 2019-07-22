@@ -15,10 +15,10 @@
         android:layout_height="38dp"
         android:alpha="0.9"
         android:background="@android:color/transparent"
+        android:onClick="onClickCitySelectionButton"
         android:text="@string/select_city"
         android:textColor="@android:color/primary_text_dark"
-        android:textSize="15sp"
-        android:onClick="onClickCitySelectionButton"
+        android:textSize="18sp"
         android:textStyle="italic"
         app:layout_constraintBaseline_toBaselineOf="@+id/city_name"
         app:layout_constraintEnd_toEndOf="parent"
@@ -63,6 +63,7 @@
         android:layout_marginBottom="20dp"
         android:text="@string/moscow"
         android:textColor="@android:color/primary_text_dark"
+        app:layout_constraintBaseline_toBaselineOf="@id/time_in"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/time_in"
@@ -96,7 +97,7 @@
         app:layout_constraintTop_toBottomOf="@+id/temperature" />
 
     <TextView
-        android:id="@+id/pressure"
+        android:id="@+id/mon_pressure"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -164,8 +165,118 @@
         android:text="@string/mm_hg"
         android:alpha="0.9"
         android:textColor="@android:color/primary_text_dark"
-        app:layout_constraintBaseline_toBaselineOf="@id/pressure"
-        app:layout_constraintStart_toEndOf="@+id/pressure"
+        app:layout_constraintBaseline_toBaselineOf="@id/mon_pressure"
+        app:layout_constraintStart_toEndOf="@+id/mon_pressure"
         app:layout_constraintTop_toBottomOf="@+id/temperature" />
+
+    <Button
+        android:id="@+id/sundayBtn"
+        android:layout_width="52dp"
+        android:layout_height="40dp"
+        android:background="@android:color/transparent"
+        android:onClick="onClickSun"
+        android:text="Sun"
+        android:textColor="@android:color/primary_text_dark"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/mondayBtn"
+        app:layout_constraintTop_toTopOf="@+id/mondayBtn" />
+
+    <Button
+        android:id="@+id/mondayBtn"
+        android:layout_width="52dp"
+        android:layout_height="40dp"
+        android:background="@android:color/transparent"
+        android:onClick="onClickMon"
+        android:text="Mon"
+        android:textColor="@android:color/primary_text_dark"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/tuesdayBtn"
+        app:layout_constraintTop_toTopOf="@+id/tuesdayBtn" />
+
+    <Button
+        android:id="@+id/tuesdayBtn"
+        android:layout_width="52dp"
+        android:layout_height="40dp"
+        android:background="@android:color/transparent"
+        android:onClick="onClickTue"
+        android:text="Tue"
+        android:textColor="@android:color/primary_text_dark"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/wednesdayBtn"
+        app:layout_constraintTop_toTopOf="@+id/wednesdayBtn" />
+
+    <Button
+        android:id="@+id/wednesdayBtn"
+        android:layout_width="52dp"
+        android:layout_height="40dp"
+        android:background="@android:color/transparent"
+        android:onClick="onClickWed"
+        android:text="Wed"
+        android:textColor="@android:color/primary_text_dark"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/atmospheric_phenomena"
+        app:layout_constraintVertical_bias="0.241" />
+
+    <Button
+        android:id="@+id/thursdayBtn"
+        android:layout_width="52dp"
+        android:layout_height="40dp"
+        android:background="@android:color/transparent"
+        android:onClick="onClickThu"
+        android:text="Thu"
+        android:textColor="@android:color/primary_text_dark"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/wednesdayBtn"
+        app:layout_constraintTop_toTopOf="@+id/wednesdayBtn" />
+
+    <Button
+        android:id="@+id/fridayBtn"
+        android:layout_width="52dp"
+        android:layout_height="40dp"
+        android:background="@android:color/transparent"
+        android:onClick="onClickFri"
+        android:text="Fri"
+        android:textColor="@android:color/primary_text_dark"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/thursdayBtn"
+        app:layout_constraintTop_toTopOf="@+id/thursdayBtn" />
+
+    <Button
+        android:id="@+id/saturdayBtn"
+        android:layout_width="52dp"
+        android:layout_height="40dp"
+        android:background="@android:color/transparent"
+        android:onClick="onClickSat"
+        android:text="Sat"
+        android:textColor="@android:color/primary_text_dark"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/fridayBtn"
+        app:layout_constraintTop_toTopOf="@+id/fridayBtn" />
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="22.07.2019"
+        android:textColor="@android:color/primary_text_dark"
+        android:alpha="0.9"
+        app:layout_constraintBaseline_toBaselineOf="@id/city_name"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/day_of_the_week"
+        android:name="com.example.weatherapp.SundayFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wednesdayBtn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
