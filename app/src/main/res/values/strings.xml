@@ -8,6 +8,24 @@
     <string name="washington">Washington, D.C.</string>
     <string name="munich">Munich</string>
     <string name="vienna">Vienna</string>
-    <string name="storm">Storm</string>
-    <string name="pressure">760 mm Hg</string>
+    <string name="pressure">760 </string>
+    <string name="plus">+</string>
+    <string name="_23">23</string>
+    <string name="C">C°</string>
+    <string name="mm_hg">mm Hg</string>
+
+    <string name="select_city">Select city</string>
+
+    <string name="weather_sunny">Sunny</string>
+    <string name="weather_clear">Clear</string>
+    <string name="weather_foggy">Foggy</string>
+    <string name="weather_cloudy">Cloudy</string>
+    <string name="weather_rainy">Rainy</string>
+    <string name="weather_snowy">Snowy</string>
+    <string name="weather_thunder">Thunder</string>
+    <string name="weather_drizzle">Drizzle</string>
+    <string name="place_not_found">No weather data found</string>
+
+
+    <string name="open_weather_id">14f34cd242746f2d76bb04739d7485fe</string>
 </resources>
