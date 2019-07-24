@@ -23,6 +23,8 @@ import com.example.weatherapp.daysOfaWeekFragments.WednesdayFragment;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static Const weatherConst;
+
     private TextView cityName;
     private TextView cityNameForeTime;
     private TextView temperatureMA;
@@ -50,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         temperatureMA = findViewById(R.id.temperature);
         atmosphericPhenomenaMA = findViewById(R.id.atmospheric_phenomena);
         pressureMA = findViewById(R.id.mon_pressure);
+        weatherConst = Const.CLEAR;
 
         layout = findViewById(R.id.main_activity);
 
@@ -66,7 +69,6 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), CitySelection.class);
         tData = new TransmissionData();
         tData.temperature = temperatureMA.getText().toString();
-        tData.atmosphericPhenomena = R.string.weather_thunder;
         tData.pressure = pressureMA.getText().toString();
         startActivityForResult(intent, 2);
     }
@@ -83,92 +85,41 @@ public class MainActivity extends AppCompatActivity {
             cityName.setText(data.getIntExtra("CITY_NAME", 0));
             cityNameForeTime.setText(data.getIntExtra("CITY_NAME", 0));
             temperatureMA.setText(data.getStringExtra("TEMPERATURE"));
-            atmosphericPhenomenaMA.setText(data.getIntExtra("ATMOSPHERIC_PHENOMENA",0));
             pressureMA.setText(data.getStringExtra("PRESSURE"));
+            atmosphericPhenomenaMA.setText(data.getIntExtra("ATMOSPHERIC_PHENOMENA", 0));
 
-            myBackground(layout, tData.atmosphericPhenomena);
-        }
-    }
-
-    private void myBackground(ConstraintLayout layout, int kindOfWeather) {
-        switch (kindOfWeather){
-            case R.string.weather_sunny:
-                layout.setBackgroundResource(R.drawable.sunny_clear);
-                break;
-            case R.string.weather_clear:
-                layout.setBackgroundResource(R.drawable.sunny_clear);
-                break;
-            case R.string.weather_foggy:
-                layout.setBackgroundResource(R.drawable.foggy);
-                break;
-            case R.string.weather_cloudy:
-                layout.setBackgroundResource(R.drawable.cloudy);
-                break;
-            case R.string.weather_rainy:
-                layout.setBackgroundResource(R.drawable.rainy_drizzle);
-                break;
-            case R.string.weather_snowy:
-                layout.setBackgroundResource(R.drawable.snowy);
-                break;
-            case R.string.weather_thunder:
-                layout.setBackgroundResource(R.drawable.thunder);
-                break;
-            case R.string.weather_drizzle:
-                layout.setBackgroundResource(R.drawable.rainy_drizzle);
-                break;
-            case R.string.place_not_found:
-                layout.setBackgroundResource(R.drawable.sunny_clear);
-                break;
+            new MyBackground(layout, weatherConst);
         }
     }
 
     public void onClickSun(View view) {
-            removeAllFragments();
             setDayOfAWeek(sundayF);
     }
 
     public void onClickMon(View view) {
-        removeAllFragments();
         setDayOfAWeek(mondayF);
     }
 
     public void onClickTue(View view) {
-        removeAllFragments();
         setDayOfAWeek(tuesdayF);
     }
 
     public void onClickWed(View view) {
-        removeAllFragments();
         setDayOfAWeek(wednesdayF);
     }
     public void onClickThu(View view) {
-        removeAllFragments();
         setDayOfAWeek(thursdayF);
     }
     public void onClickFri(View view) {
-        removeAllFragments();
         setDayOfAWeek(fridayF);
     }
     public void onClickSat(View view) {
-        removeAllFragments();
         setDayOfAWeek(saturdayF);
     }
 
     public void setDayOfAWeek(Fragment fragment){
         ListenerOnAdd listenerOnAdd = new ListenerOnAdd(fragment);
         listenerOnAdd.addFragment();
-    }
-
-    public void removeAllFragments() {
-        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.remove(sundayF);
-        fragmentTransaction.remove(mondayF);
-        fragmentTransaction.remove(tuesdayF);
-        fragmentTransaction.remove(wednesdayF);
-        fragmentTransaction.remove(thursdayF);
-        fragmentTransaction.remove(fridayF);
-        fragmentTransaction.remove(saturdayF);
-        fragmentTransaction.commit();
     }
 
     class ListenerOnAdd implements View.OnClickListener{
@@ -186,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
 
         private void addFragment(){
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.add(R.id.day_of_the_week, fragment);
+            fragmentTransaction.replace(R.id.day_of_the_week, fragment);
             fragmentTransaction.commit();
         }
     }
