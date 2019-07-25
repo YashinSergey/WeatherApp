@@ -6,11 +6,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.weatherapp.daysOfaWeekFragments.FridayFragment;
@@ -63,6 +66,19 @@ public class MainActivity extends AppCompatActivity {
         thursdayF = new ThursdayFragment();
         fridayF = new FridayFragment();
         saturdayF = new SaturdayFragment();
+
+        ItemSource dataSource = new ItemSource(getResources());
+
+        RecyclerView recyclerView = findViewById(R.id.recyclerView);
+        recyclerView.setHasFixedSize(true);
+
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getApplicationContext(),
+                LinearLayoutManager.HORIZONTAL, false);
+        recyclerView.setLayoutManager(layoutManager);
+
+        ItemAdapter itemAdapter = new ItemAdapter(dataSource);
+        recyclerView.setAdapter(itemAdapter);
+
     }
 
     public void onClickCitySelectionButton(View view) {
@@ -107,12 +123,15 @@ public class MainActivity extends AppCompatActivity {
     public void onClickWed(View view) {
         setDayOfAWeek(wednesdayF);
     }
+
     public void onClickThu(View view) {
         setDayOfAWeek(thursdayF);
     }
+
     public void onClickFri(View view) {
         setDayOfAWeek(fridayF);
     }
+
     public void onClickSat(View view) {
         setDayOfAWeek(saturdayF);
     }

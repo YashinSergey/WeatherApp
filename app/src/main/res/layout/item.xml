@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/symbol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="0.9"
+                android:text="@string/plus"
+                android:textColor="@android:color/primary_text_dark"
+                android:textSize="70sp" />
+
+            <TextView
+                android:id="@+id/temperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="0.9"
+                android:text="@string/_23"
+                android:textColor="@android:color/primary_text_dark"
+                android:textSize="70sp" />
+
+            <TextView
+                android:id="@+id/celsius"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="0.9"
+                android:text="@string/C"
+                android:textColor="@android:color/primary_text_dark"
+                android:textSize="70sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/atmospheric_phenomena"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:alpha="0.9"
+                android:text="@string/weather_clear"
+                android:textAlignment="center"
+                android:textColor="@android:color/primary_text_dark"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/mon_pressure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="0.9"
+                android:text="@string/pressure"
+                android:textAlignment="center"
+                android:textColor="@android:color/primary_text_dark"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/mm_Hg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="0.9"
+                android:text="@string/mm_hg"
+                android:textAlignment="center"
+                android:textColor="@android:color/primary_text_dark" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

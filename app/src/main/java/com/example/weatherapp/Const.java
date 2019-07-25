@@ -10,5 +10,5 @@ public enum Const {
     SNOWY,
     THUNDER,
     DRIZZLE,
-    NO_WEATHER_DATA_FOUND;
+    NO_WEATHER_DATA_FOUND
 }

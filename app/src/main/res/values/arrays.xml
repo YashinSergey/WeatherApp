@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+
+    <array name="myArray">
+        <item>@array/weather_array1</item>
+        <item>@array/weather_array2</item>
+        <item>@array/weather_array3</item>
+    </array>
+
+    <string-array name="weather_array1">
+        <item>@string/plus</item>
+        <item>@string/_23</item>
+        <item>@string/C</item>
+        <item>@string/weather_clear</item>
+        <item>@string/pressure</item>
+        <item>@string/mm_hg</item>
+    </string-array>
+
+    <string-array name="weather_array2">
+        <item>@string/plus</item>
+        <item>@string/_25</item>
+        <item>@string/C</item>
+        <item>@string/weather_sunny</item>
+        <item>@string/pressure</item>
+        <item>@string/mm_hg</item>
+    </string-array>
+
+    <string-array name="weather_array3">
+        <item>@string/plus</item>
+        <item>@string/_23</item>
+        <item>@string/C</item>
+        <item>@string/weather_thunder</item>
+        <item>@string/pressure</item>
+        <item>@string/mm_hg</item>
+    </string-array>
+</resources>

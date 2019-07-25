@@ -82,92 +82,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="MissingConstraints" />
 
-    <TextView
-        android:id="@+id/atmospheric_phenomena"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:alpha="0.9"
-        android:text="@string/weather_clear"
-        android:textColor="@android:color/primary_text_dark"
-        android:textSize="22sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.388"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/temperature" />
-
-    <TextView
-        android:id="@+id/mon_pressure"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="22dp"
-        android:alpha="0.9"
-        android:text="@string/pressure"
-        android:textColor="@android:color/primary_text_dark"
-        android:textSize="15sp"
-        app:layout_constraintStart_toEndOf="@+id/atmospheric_phenomena"
-        app:layout_constraintTop_toBottomOf="@+id/temperature" />
-
-    <TextView
-        android:id="@+id/symbol"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:alpha="0.9"
-        android:text="@string/plus"
-        android:textColor="@android:color/primary_text_dark"
-        android:textSize="70sp"
-        app:layout_constraintBottom_toTopOf="@+id/time_in"
-        app:layout_constraintEnd_toStartOf="@+id/temperature"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.275" />
-
-    <TextView
-        android:id="@+id/temperature"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:alpha="0.9"
-        android:text="@string/_23"
-        android:textColor="@android:color/primary_text_dark"
-        android:textSize="70sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/city_name"
-        app:layout_constraintVertical_bias="0.207" />
-
-    <TextView
-        android:id="@+id/celsius"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:alpha="0.9"
-        android:text="@string/C"
-        android:textColor="@android:color/primary_text_dark"
-        android:textSize="70sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/temperature"
-        app:layout_constraintTop_toBottomOf="@+id/city_name"
-        app:layout_constraintVertical_bias="0.207" />
-
-    <TextView
-        android:id="@+id/mm_Hg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="3dp"
-        android:layout_marginTop="22dp"
-        android:text="@string/mm_hg"
-        android:alpha="0.9"
-        android:textColor="@android:color/primary_text_dark"
-        app:layout_constraintBaseline_toBaselineOf="@id/mon_pressure"
-        app:layout_constraintStart_toEndOf="@+id/mon_pressure"
-        app:layout_constraintTop_toBottomOf="@+id/temperature" />
 
     <Button
         android:id="@+id/sundayBtn"
@@ -209,6 +123,8 @@
         android:id="@+id/wednesdayBtn"
         android:layout_width="52dp"
         android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         android:background="@android:color/transparent"
         android:onClick="onClickWed"
         android:text="Wed"
@@ -218,8 +134,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/atmospheric_phenomena"
-        app:layout_constraintVertical_bias="0.241" />
+        app:layout_constraintTop_toTopOf="@+id/city_name"
+        app:layout_constraintVertical_bias="0.628" />
 
     <Button
         android:id="@+id/thursdayBtn"
@@ -278,5 +194,19 @@
         android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/wednesdayBtn" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="250dp"
+        android:layout_height="177dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="116dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/city_name_btn"
+        app:layout_constraintVertical_bias="0.005" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

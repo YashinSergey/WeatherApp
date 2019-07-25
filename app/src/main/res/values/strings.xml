@@ -8,10 +8,11 @@
     <string name="washington">Washington, D.C.</string>
     <string name="munich">Munich</string>
     <string name="vienna">Vienna</string>
-    <string name="pressure">760 </string>
     <string name="plus">+</string>
     <string name="_23">23</string>
+    <string name="_25">25</string>
     <string name="C">C°</string>
+    <string name="pressure">760 </string>
     <string name="mm_hg">mm Hg</string>
 
     <string name="select_city">Select city</string>
@@ -28,4 +29,5 @@
 
 
     <string name="open_weather_id">14f34cd242746f2d76bb04739d7485fe</string>
+
 </resources>
