@@ -2,13 +2,13 @@ package com.example.weatherapp;
 
 public class Items {
 
-    private String item;
+    private Item item;
 
-    public Items(String item) {
+    public Items(Item item) {
         this.item = item;
     }
 
-    public String getItem() {
+    public Item getItem() {
         return item;
     }
 }

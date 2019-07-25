@@ -3,7 +3,7 @@
 
 
 
-    <array name="myArray">
+    <array name="my_array">
         <item>@array/weather_array1</item>
         <item>@array/weather_array2</item>
         <item>@array/weather_array3</item>

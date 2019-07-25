@@ -10,9 +10,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
 
-    private final ItemSource dataSource;
+    private final ItemsSource dataSource;
 
-    public ItemAdapter(ItemSource  dataSource) {
+    public ItemAdapter(ItemsSource dataSource) {
         this.dataSource = dataSource;
     }
 
@@ -25,9 +25,9 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Item item = dataSource.getItem(position);
-        holder.setData(item.getSymbol(), item.getTemperature(), item.getCelsius(),
-                item.getAtmPhenomena(), item.getPressure(), item.getMmHg());
+        Items items = dataSource.getItem(position);
+        holder.setData(items.getItem().getSymbol(), items.getItem().getTemperature(), items.getItem().getCelsius(),
+                items.getItem().getAtmPhenomena(), items.getItem().getPressure(), items.getItem().getMmHg());
     }
 
     @Override
@@ -45,6 +45,9 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
         private TextView pressure;
         private TextView mmHg;
 
+//        private Item item;
+//        private Items items;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
@@ -54,6 +57,11 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
             atmPhenomena = itemView.findViewById(R.id.atmospheric_phenomena);
             pressure = itemView.findViewById(R.id.mon_pressure);
             mmHg = itemView.findViewById(R.id.mm_Hg);
+
+//            item = new Item(symbol.getText().toString(), temperature.getText().toString(), celsius.getText().toString(),
+//                    atmPhenomena.getText().toString(), pressure.getText().toString(), mmHg.getText().toString());
+//            items = new Items(item);
+
         }
 
         private void setData(String symbol, String temperature, String celsius, String atmPhenomena, String pressure, String mmHg) {

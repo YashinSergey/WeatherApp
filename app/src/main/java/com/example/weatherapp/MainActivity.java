@@ -13,7 +13,6 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.weatherapp.daysOfaWeekFragments.FridayFragment;
@@ -67,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         fridayF = new FridayFragment();
         saturdayF = new SaturdayFragment();
 
-        ItemSource dataSource = new ItemSource(getResources());
+        ItemsSource dataSource = new ItemsSource(getResources());
 
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
