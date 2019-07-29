@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<androidx.core.widget.NestedScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/colorDark">
+    android:layout_height="match_parent">
 
     <TableLayout
         android:layout_width="match_parent"
@@ -13,88 +12,87 @@
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:alpha="0.7">
+            android:layout_height="match_parent">
 
             <Button
                 android:id="@+id/moscowCB"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:onClick="onClickMoscowRB"
                 android:text="@string/moscow"
-                android:background="@color/colorr"
                 android:textColor="@android:color/primary_text_dark"
                 android:textColorLink="#00E6DFDF"
-                android:layout_margin="1dp"
+                android:textSize="12sp"
                 tools:ignore="ButtonStyle" />
 
             <Button
                 android:id="@+id/saint_petersburgCB"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:onClick="onClickSaintPetersburgRB"
                 android:text="@string/saint_petersburg"
-                android:background="@color/colorr"
                 android:textColor="@android:color/primary_text_dark"
-                android:layout_margin="1dp"
+                android:textSize="12sp"
                 tools:ignore="ButtonStyle" />
 
             <Button
                 android:id="@+id/washingtonCB"
-                android:layout_width="wrap_content"
+                android:layout_width="162dp"
                 android:layout_height="wrap_content"
+                android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:onClick="onClickWashingtonRB"
                 android:text="@string/washington"
-                android:background="@color/colorr"
                 android:textColor="@android:color/primary_text_dark"
-                android:layout_margin="1dp"
+                android:textSize="12sp"
                 tools:ignore="ButtonStyle" />
 
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:alpha="0.7">
+            android:layout_height="match_parent">
 
             <Button
                 android:id="@+id/munichCB"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:onClick="onClickMunichRB"
                 android:text="@string/munich"
-                android:background="@color/colorr"
                 android:textColor="@android:color/primary_text_dark"
-                android:layout_margin="1dp"
+                android:textSize="12sp"
                 tools:ignore="ButtonStyle" />
 
             <Button
                 android:id="@+id/los_angelesCB"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:onClick="onClickLosAngelesRB"
                 android:text="@string/los_angeles"
-                android:background="@color/colorr"
                 android:textColor="@android:color/primary_text_dark"
-                android:layout_margin="1dp"
+                android:textSize="12sp"
                 tools:ignore="ButtonStyle" />
 
             <Button
                 android:id="@+id/viennaCB"
-                android:layout_width="wrap_content"
+                android:layout_width="139dp"
                 android:layout_height="wrap_content"
+                android:layout_margin="1dp"
                 android:layout_weight="1"
+                android:gravity="center"
                 android:onClick="onClickViennaRB"
                 android:text="@string/vienna"
-                android:background="@color/colorr"
                 android:textColor="@android:color/primary_text_dark"
-                android:layout_margin="1dp"
+                android:textSize="12sp"
                 tools:ignore="ButtonStyle" />
         </TableRow>
     </TableLayout>
-</ScrollView>
+</androidx.core.widget.NestedScrollView>

@@ -1,13 +1,11 @@
 package com.example.weatherapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class CitySelection extends AppCompatActivity {
+public class CitySelection extends BaseActivity {
 
     private TransmissionData tData;
 
