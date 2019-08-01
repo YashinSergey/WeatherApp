@@ -28,4 +28,5 @@
 
 
     <string name="open_weather_id">14f34cd242746f2d76bb04739d7485fe</string>
+    <string name="settings">settings</string>
 </resources>
