@@ -10,8 +10,11 @@ import androidx.fragment.app.FragmentTransaction;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.weatherapp.daysOfaWeekFragments.FridayFragment;
 import com.example.weatherapp.daysOfaWeekFragments.MondayFragment;
@@ -20,8 +23,9 @@ import com.example.weatherapp.daysOfaWeekFragments.SundayFragment;
 import com.example.weatherapp.daysOfaWeekFragments.ThursdayFragment;
 import com.example.weatherapp.daysOfaWeekFragments.TuesdayFragment;
 import com.example.weatherapp.daysOfaWeekFragments.WednesdayFragment;
+import com.google.android.material.snackbar.Snackbar;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     public static Const weatherConst;
 
@@ -65,6 +69,25 @@ public class MainActivity extends AppCompatActivity {
         saturdayF = new SaturdayFragment();
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main_activity, menu);
+        return true;
+    }
+
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        int id = item.getItemId();
+//        switch (id) {
+//            case R.id.settings:
+//                Intent intent = new Intent(MainActivity.this, SettingActivity.class);
+//                startActivityForResult(intent, 02);
+//                return true;
+//            default:
+//                return super.onOptionsItemSelected(item);
+//        }
+//    }
+
     public void onClickCitySelectionButton(View view) {
         Intent intent = new Intent(getApplicationContext(), CitySelection.class);
         tData = new TransmissionData();
@@ -90,6 +113,10 @@ public class MainActivity extends AppCompatActivity {
 
             new MyBackground(layout, weatherConst);
         }
+
+//        if (requestCode == 02) {
+//            recreate();
+//        }
     }
 
     public void onClickSun(View view) {

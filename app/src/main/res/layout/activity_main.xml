@@ -9,8 +9,8 @@
     android:background="@drawable/sunny_clear"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/city_name_btn"
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/city_select_btn"
         android:layout_width="wrap_content"
         android:layout_height="38dp"
         android:alpha="0.9"
@@ -18,7 +18,8 @@
         android:onClick="onClickCitySelectionButton"
         android:text="@string/select_city"
         android:textColor="@android:color/primary_text_dark"
-        android:textSize="18sp"
+        android:textSize="10sp"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:textStyle="italic"
         app:layout_constraintBaseline_toBaselineOf="@+id/city_name"
         app:layout_constraintEnd_toEndOf="parent"
@@ -169,51 +170,56 @@
         app:layout_constraintStart_toEndOf="@+id/mon_pressure"
         app:layout_constraintTop_toBottomOf="@+id/temperature" />
 
-    <Button
+
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/sundayBtn"
-        android:layout_width="52dp"
+        android:layout_width="55dp"
         android:layout_height="40dp"
         android:background="@android:color/transparent"
         android:onClick="onClickSun"
         android:text="Sun"
         android:textColor="@android:color/primary_text_dark"
-        android:textSize="12sp"
+        android:textSize="10sp"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         app:layout_constraintEnd_toStartOf="@+id/mondayBtn"
         app:layout_constraintTop_toTopOf="@+id/mondayBtn" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/mondayBtn"
-        android:layout_width="52dp"
+        android:layout_width="55dp"
         android:layout_height="40dp"
         android:background="@android:color/transparent"
         android:onClick="onClickMon"
         android:text="Mon"
         android:textColor="@android:color/primary_text_dark"
-        android:textSize="12sp"
+        android:textSize="10sp"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         app:layout_constraintEnd_toStartOf="@+id/tuesdayBtn"
         app:layout_constraintTop_toTopOf="@+id/tuesdayBtn" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/tuesdayBtn"
-        android:layout_width="52dp"
+        android:layout_width="55dp"
         android:layout_height="40dp"
         android:background="@android:color/transparent"
         android:onClick="onClickTue"
         android:text="Tue"
         android:textColor="@android:color/primary_text_dark"
-        android:textSize="12sp"
+        android:textSize="10sp"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         app:layout_constraintEnd_toStartOf="@+id/wednesdayBtn"
         app:layout_constraintTop_toTopOf="@+id/wednesdayBtn" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/wednesdayBtn"
-        android:layout_width="52dp"
+        android:layout_width="55dp"
         android:layout_height="40dp"
         android:background="@android:color/transparent"
         android:onClick="onClickWed"
         android:text="Wed"
         android:textColor="@android:color/primary_text_dark"
-        android:textSize="12sp"
+        android:textSize="10sp"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -221,39 +227,42 @@
         app:layout_constraintTop_toBottomOf="@+id/atmospheric_phenomena"
         app:layout_constraintVertical_bias="0.241" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/thursdayBtn"
-        android:layout_width="52dp"
+        android:layout_width="55dp"
         android:layout_height="40dp"
         android:background="@android:color/transparent"
         android:onClick="onClickThu"
         android:text="Thu"
         android:textColor="@android:color/primary_text_dark"
-        android:textSize="12sp"
+        android:textSize="10sp"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         app:layout_constraintStart_toEndOf="@+id/wednesdayBtn"
         app:layout_constraintTop_toTopOf="@+id/wednesdayBtn" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/fridayBtn"
-        android:layout_width="52dp"
+        android:layout_width="55dp"
         android:layout_height="40dp"
         android:background="@android:color/transparent"
         android:onClick="onClickFri"
         android:text="Fri"
         android:textColor="@android:color/primary_text_dark"
-        android:textSize="12sp"
+        android:textSize="10sp"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         app:layout_constraintStart_toEndOf="@+id/thursdayBtn"
         app:layout_constraintTop_toTopOf="@+id/thursdayBtn" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/saturdayBtn"
-        android:layout_width="52dp"
+        android:layout_width="55dp"
         android:layout_height="40dp"
         android:background="@android:color/transparent"
         android:onClick="onClickSat"
         android:text="Sat"
         android:textColor="@android:color/primary_text_dark"
-        android:textSize="12sp"
+        android:textSize="10sp"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         app:layout_constraintStart_toEndOf="@+id/fridayBtn"
         app:layout_constraintTop_toTopOf="@+id/fridayBtn" />
 

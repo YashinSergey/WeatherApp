@@ -1,0 +1,16 @@
+<menu
+    android:id = "@+id/menu_main_activity"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    tools:context="com.example.weatherapp.MainActivity">
+
+    <item
+        android:id="@+id/settings"
+        android:orderInCategory="100"
+        android:title="@string/settings"
+        app:showAsAction="never" />
+
+</menu>
