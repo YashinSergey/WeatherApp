@@ -90,9 +90,6 @@ public class MainActivity extends BaseActivity {
 
     public void onClickCitySelectionButton(View view) {
         Intent intent = new Intent(getApplicationContext(), CitySelection.class);
-        tData = new TransmissionData();
-        tData.temperature = temperatureMA.getText().toString();
-        tData.pressure = pressureMA.getText().toString();
         startActivityForResult(intent, 2);
     }
 
@@ -105,13 +102,15 @@ public class MainActivity extends BaseActivity {
         }
         if (resultCode == RESULT_OK) {
             assert data != null;
-            cityName.setText(data.getIntExtra("CITY_NAME", 0));
-            cityNameForeTime.setText(data.getIntExtra("CITY_NAME", 0));
-            temperatureMA.setText(data.getStringExtra("TEMPERATURE"));
-            pressureMA.setText(data.getStringExtra("PRESSURE"));
-            atmosphericPhenomenaMA.setText(data.getIntExtra("ATMOSPHERIC_PHENOMENA", 0));
+            cityName.setText(WeatherData.cityName);
+            cityNameForeTime.setText(WeatherData.cityName);
+            temperatureMA.setText(WeatherData.temperature);
+            pressureMA.setText(WeatherData.pressure);
+            atmosphericPhenomenaMA.setText(R.string.weather_cloudy);
 
-            new MyBackground(layout, weatherConst);
+//            new MyBackground(layout, weatherConst);
+
+
         }
 
 //        if (requestCode == 02) {
